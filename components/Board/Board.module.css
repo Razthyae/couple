@@ -1,0 +1,13 @@
+.board {
+    width: calc(100px * 8);
+    height: calc(100px * 5);
+    position: absolute;
+    z-index: -1;
+    top: 20px;
+}
+
+.colContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

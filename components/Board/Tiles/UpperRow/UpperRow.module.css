@@ -1,0 +1,4 @@
+.upperRow {
+    display: flex;
+ flex-direction: row;  
+}

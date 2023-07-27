@@ -1,0 +1,4 @@
+.leftColumn {
+    display: flex;
+ flex-direction: column-reverse;  
+}
