@@ -1,19 +1,26 @@
 import styles from "./TokenMale.module.css";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useContext } from "react";
+import {GameContext} from '../../../pages/index'
 
-export default function TokenMale(props: any) {
+export default function TokenMale() {
   const tokenRef: any = useRef(null);
+
+ 
+  const {currTileMale, tracker, setTracker} = useContext(GameContext)
+
 
   useEffect(() => {
     const handleWindowResize = () => {
-      console.log("zmiana");
-      props.setTracker(props.tracker + 1);
+    
+      setTracker(tracker + 1);
     };
 
     window.addEventListener("resize", handleWindowResize);
 
+
+
     const startingTile: any = document.getElementById(
-      `tile-${`${props.currTileMale}`}`
+      `tile-${`${currTileMale}`}`
     );
     const tileLeft = startingTile.getBoundingClientRect().left;
     const tileTop = startingTile.getBoundingClientRect().top;
@@ -23,7 +30,7 @@ export default function TokenMale(props: any) {
     }px)`;
 
     return () => window.removeEventListener("resize", handleWindowResize);
-  }, [props.tracker]);
+  }, [tracker]);
 
 
 

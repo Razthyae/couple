@@ -1,28 +1,31 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import styles from "./Dice.module.css";
 import { Tiles, Actions } from "../../Board/Tiles/const"
 import { calculateNewTile } from "./helper";
 import { act } from "react-dom/test-utils";
 import Swal from "sweetalert2";
+import {GameContext} from '../../../pages/index'
 
 /* interface Props {
     diceResult: number | null,
     setDiceResult: 
 } */
 
-function Dice(props: any) {
+function Dice() {
   const {
+    diceResult,
     setDiceResult,
     currTileFemale,
     currTileMale,
     setCurrTileFemale,
     setCurrTileMale,
     activePlayer,
+    setActivePlayer,
     pointsMale,
     pointsFemale,
     setPointsFemale,
     setPointsMale,
-  } = props;
+  } = useContext(GameContext);
 
   const rollRef = useRef<HTMLButtonElement>(null);
 
@@ -124,15 +127,15 @@ function Dice(props: any) {
 
     ////////////////////// SET THE ACTIVE PLAYER //////////////////////
     activePlayer === "male"
-      ? props.setActivePlayer("female")
-      : props.setActivePlayer("male");
+      ? setActivePlayer("female")
+      : setActivePlayer("male");
 
     setTimeout(() => (rollRef.current!.disabled = false), 1000);
   };
 
   return (
     <div className={styles.dice}>
-      <p id="dice-result">{props.diceResult}</p>
+      <p id="dice-result">{diceResult}</p>
       <p id="active-player">{activePlayer}</p>
       <button onClick={handleRoll} id="dice-btn" ref={rollRef}>
         Roll the dice

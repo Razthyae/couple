@@ -1,11 +1,14 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import Board from "../components/Board/Board";
 import TokenMale from "../components/Board/Token/TokenMale";
 import TokenFemale from "../components/Board/Token/TokenFemale";
-import Dice from '../components/UI/Dice/Dice'
-import Points from '../components/UI/Points/Points'
+import Dice from "../components/UI/Dice/Dice";
+import Points from "../components/UI/Points/Points";
+import { act } from "react-dom/test-utils";
+
+export const GameContext = createContext();
 
 export default function Home() {
   const [currTileMale, setCurrTileMale] = useState(1);
@@ -16,6 +19,23 @@ export default function Home() {
   const [pointsMale, setPointsMale] = useState(0);
   const [pointsFemale, setPointsFemale] = useState(0);
 
+  const state = {
+    currTileMale: currTileMale,
+    setCurrTileMale: setCurrTileMale,
+    currTileFemale: currTileFemale,
+    setCurrTileFemale: setCurrTileFemale,
+    diceResult: diceResult,
+    setDiceResult: setDiceResult,
+    activePlayer: activePlayer,
+    setActivePlayer: setActivePlayer,
+    pointsMale: pointsMale,
+    setPointsMale: setPointsMale,
+    pointsFemale: pointsFemale,
+    setPointsFemale: setPointsFemale,
+    tracker: tracker, 
+    setTracker: setTracker
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -24,6 +44,7 @@ export default function Home() {
       </Head>
 
       <main>
+        <GameContext.Provider value={state}>
         <div className={styles.App}>
           <Board />
           <TokenMale
@@ -60,6 +81,7 @@ export default function Home() {
           />
           <Points pointsMale={pointsMale} pointsFemale={pointsFemale} />
         </div>
+        </GameContext.Provider>
       </main>
     </div>
   );
