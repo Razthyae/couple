@@ -110,3 +110,22 @@ export const Actions = {
     "-1": "Spend 1 victory point to do something",
     "-3": "Spend 3 victory points to do something more"
 }
+
+export const aActions1 = [
+    {"-1": "Spend 1 victory point to do something1"},
+    {"-1": "Spend 1 victory point to do something2"},
+    {"-1": "Spend 1 victory point to do something3"},
+    {"-1": "Spend 1 victory point to do something4"},
+    {"-1": "Spend 1 victory point to do something5"},
+    {"-1": "Spend 1 victory point to do something6"}
+    
+]
+
+export const aActions3 = [
+   {"-3": "Spend 3 victory points to do something more1"},
+    {"-3": "Spend 3 victory points to do something more2"},
+    {"-3": "Spend 3 victory points to do something more3"},
+    {"-3": "Spend 3 victory points to do something more4"},
+    {"-3": "Spend 3 victory points to do something more5"},
+    {"-3": "Spend 3 victory points to do something more6"},
+]
