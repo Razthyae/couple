@@ -18,6 +18,21 @@ export default function Home() {
   const [activePlayer, setActivePlayer] = useState("male");
   const [pointsMale, setPointsMale] = useState(0);
   const [pointsFemale, setPointsFemale] = useState(0);
+  const [currTile, setCurrTile] = useState([1,1])
+  const [points, setPoints] = useState([0,0])
+  const [active, setActive] = useState(0)
+
+  const updateCurrTile = (index, newValue) => {
+    const updatedValues = [...currTile];
+    updatedValues[index] = newValue;
+    setCurrTile(updatedValues); 
+  }
+
+  const updatePoints = (index, newValue) => {
+    const updatedValues = [...points];
+    updatedValues[index] = newValue;
+    setPoints(updatedValues);
+  }
 
   const state = {
     currTileMale: currTileMale,
@@ -33,7 +48,15 @@ export default function Home() {
     pointsFemale: pointsFemale,
     setPointsFemale: setPointsFemale,
     tracker: tracker, 
-    setTracker: setTracker
+    setTracker: setTracker,
+    currTile: currTile,
+    setCurrTile: setCurrTile,
+    points: points,
+    setPoints: setPoints,
+    active: active,
+    setActive: setActive,
+    updateCurrTile: updateCurrTile,
+    updatePoints: updatePoints
   };
 
   return (

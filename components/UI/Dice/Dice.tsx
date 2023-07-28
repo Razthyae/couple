@@ -25,6 +25,12 @@ function Dice() {
     pointsFemale,
     setPointsFemale,
     setPointsMale,
+    currTile,
+    setCurrTile,
+    points,
+    setPoints,
+    active,
+    setActive
   } = useContext(GameContext);
 
   const rollRef = useRef<HTMLButtonElement>(null);
@@ -62,6 +68,11 @@ function Dice() {
         tileTop + 35
       }px)`;
     }
+
+    /////////////////////// USING SINGLE FUNCTION ///////////////////////
+    let newTileValue = calculateNewTile(roll, currTile[active])
+    setCurrTileMale()
+
 
     //////////////// ADD / REMOVE POINTS / TILE ACTION/////////////////
     if (activePlayer === "male") {
