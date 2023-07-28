@@ -6,7 +6,7 @@ export default function TokenMale() {
   const tokenRef: any = useRef(null);
 
  
-  const {currTileMale, tracker, setTracker} = useContext(GameContext)
+  const {tracker, setTracker, currTile} = useContext(GameContext)
 
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function TokenMale() {
 
 
     const startingTile: any = document.getElementById(
-      `tile-${`${currTileMale}`}`
+      `tile-${`${currTile[0]}`}`
     );
     const tileLeft = startingTile.getBoundingClientRect().left;
     const tileTop = startingTile.getBoundingClientRect().top;

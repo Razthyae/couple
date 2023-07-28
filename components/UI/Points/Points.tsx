@@ -2,12 +2,12 @@ import React from 'react'
 import styles from './Points.module.css'
 
 function Points(props: any) {
-    const {pointsMale, pointsFemale} = props
+    const {points} = props
 
     return (
         <div className={styles.points}>
-            <p>Male: {pointsMale}</p>
-            <p>Female: {pointsFemale}</p>
+            <p>Male: {points[0]}</p>
+            <p>Female: {points[1]}</p>
         </div>
     )
 }

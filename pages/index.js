@@ -29,6 +29,7 @@ export default function Home() {
   }
 
   const updatePoints = (index, newValue) => {
+    console.log('updatuje pnkty')
     const updatedValues = [...points];
     updatedValues[index] = newValue;
     setPoints(updatedValues);
@@ -102,7 +103,7 @@ export default function Home() {
             setPointsMale={setPointsMale}
             setPointsFemale={setPointsFemale}
           />
-          <Points pointsMale={pointsMale} pointsFemale={pointsFemale} />
+          <Points pointsMale={pointsMale} pointsFemale={pointsFemale} points={points}/>
         </div>
         </GameContext.Provider>
       </main>

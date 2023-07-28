@@ -5,7 +5,7 @@ import {GameContext} from '../../../pages/index'
 export default function TokenFemale() {
   const tokenRef: any = useRef(null);
 
-    const {currTileFemale, tracker, setTracker} = useContext(GameContext)
+    const {tracker, setTracker, currTile} = useContext(GameContext)
 
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function TokenFemale() {
     window.addEventListener("resize", handleWindowResize);
 
     const startingTile: any = document.getElementById(
-      `tile-${`${currTileFemale}`}`
+      `tile-${`${currTile[1]}`}`
     );
     const tileLeft = startingTile.getBoundingClientRect().left;
     const tileTop = startingTile.getBoundingClientRect().top;
