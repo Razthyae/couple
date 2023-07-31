@@ -6,8 +6,7 @@ function Points(props: any) {
 
     return (
         <div className={styles.points}>
-            <p>Male: {points[0]}</p>
-            <p>Female: {points[1]}</p>
+            <p>Male: {points[0]} Female: {points[1]}</p>
         </div>
     )
 }

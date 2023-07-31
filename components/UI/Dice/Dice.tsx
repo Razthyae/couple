@@ -1,7 +1,6 @@
 import React, { useRef, useContext } from "react";
 import styles from "./Dice.module.css";
 import { Tiles, Actions, aActions1, aActions3 } from "../../Board/Tiles/const";
-import { calculateNewTile } from "./helper";
 import { act } from "react-dom/test-utils";
 import Swal from "sweetalert2";
 import { GameContext } from "../../../pages/index";
@@ -15,16 +14,34 @@ function Dice() {
   const {
     diceResult,
     setDiceResult,
-    activePlayer,
+    round,
     currTile,
     points,
     active,
     setActive,
     updateCurrTile,
     updatePoints,
+    updateRound,
+    devMode,
+    setDevMode
   } = useContext(GameContext);
 
+  
+
   const rollRef = useRef<HTMLButtonElement>(null);
+
+
+  const calculateNewTile = (roll: number, currentTile: number) => {
+
+
+    let result: number = currentTile + roll
+    if(result > 22) {
+        result -= 22
+        updateRound(active, (round[active] + 1))
+    }
+    return result
+    }
+
 
   const handleRoll = () => {
     rollRef.current!.disabled = true;
@@ -54,14 +71,11 @@ function Dice() {
     let tilePoints = Tiles[tileNumber].points;
 
     if (Number.isInteger(tilePoints)) {
-      console.log("jest integer");
-      console.log(active);
-      console.log(points[active]);
-      console.log(tilePoints);
+    
       updatePoints(active, points[active] + tilePoints);
-      console.log(points[active]);
+    
     }
-    if (Tiles[tileNumber].action) {
+    if (Tiles[tileNumber].action && !devMode) {
       let basicAction: object = {"3": "Add 3 victory points"}
       console.log(basicAction)
       let randomAction1: object = aActions1[Math.floor(Math.random() * aActions1.length)]
@@ -112,10 +126,13 @@ function Dice() {
   return (
     <div className={styles.dice}>
       <p id="dice-result">{diceResult}</p>
-      <p id="active-player">{activePlayer}</p>
+      <p id="active-player">
+        {active === 0 ? 'Male' : "Female" }
+      </p>
       <button onClick={handleRoll} id="dice-btn" ref={rollRef}>
         Roll the dice
       </button>
+      <button onClick={() => setDevMode(!devMode)}>Dev mode = {`${devMode}`} </button>
     </div>
   );
 }

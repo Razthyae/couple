@@ -11,12 +11,12 @@ export default function TokenMale() {
 
   useEffect(() => {
     const handleWindowResize = () => {
-    
+      window.scrollTo(0,0)
       setTracker(tracker + 1);
     };
 
     window.addEventListener("resize", handleWindowResize);
-
+    
 
 
     const startingTile: any = document.getElementById(
