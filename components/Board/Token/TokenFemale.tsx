@@ -1,12 +1,11 @@
 import styles from "./TokenFemale.module.css";
 import { useRef, useEffect, useContext } from "react";
-import {GameContext} from '../../../pages/index'
+import { GameContext } from "../../../pages/index";
 
 export default function TokenFemale() {
   const tokenRef: any = useRef(null);
 
-    const {tracker, setTracker, currTile} = useContext(GameContext)
-
+  const { tracker, setTracker, currTile } = useContext(GameContext);
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -22,16 +21,19 @@ export default function TokenFemale() {
     const tileLeft = startingTile.getBoundingClientRect().left;
     const tileTop = startingTile.getBoundingClientRect().top;
 
+    tokenRef.current.style.transitionDuration = "0s";
     tokenRef.current.style.transform = `translate(${tileLeft + 35}px, ${
       tileTop + 35
     }px)`;
+    setTimeout(
+      () => (tokenRef.current.style.transitionDuration = "0.5s"),
+      1000
+    );
 
     return () => window.removeEventListener("resize", handleWindowResize);
   }, [tracker]);
 
-
   return (
-    <div className={styles.tokenFemale} ref={tokenRef} id="tokenFemale">
-     </div>
+    <div className={styles.tokenFemale} ref={tokenRef} id="tokenFemale"></div>
   );
 }

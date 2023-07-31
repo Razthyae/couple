@@ -24,10 +24,12 @@ export default function TokenMale() {
     );
     const tileLeft = startingTile.getBoundingClientRect().left;
     const tileTop = startingTile.getBoundingClientRect().top;
-
+    
+    tokenRef.current.style.transitionDuration = "0s"
     tokenRef.current.style.transform = `translate(${tileLeft + 35}px, ${
       tileTop + 35
     }px)`;
+    setTimeout(() => tokenRef.current.style.transitionDuration = "0.5s", 1000)
 
     return () => window.removeEventListener("resize", handleWindowResize);
   }, [tracker]);
