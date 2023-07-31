@@ -1,6 +1,6 @@
 import styles from "./TokenFemale.module.css";
 import { useRef, useEffect, useContext } from "react";
-import { GameContext } from "../../../pages/index";
+import { GameContext } from "../../../pages/game";
 
 export default function TokenFemale() {
   const tokenRef: any = useRef(null);

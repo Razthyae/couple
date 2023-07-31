@@ -3,7 +3,7 @@ import styles from "./Dice.module.css";
 import { Tiles, Actions, aActions1, aActions3 } from "../../Board/Tiles/const";
 import { act } from "react-dom/test-utils";
 import Swal from "sweetalert2";
-import { GameContext } from "../../../pages/index";
+import { GameContext } from "../../../pages/game";
 
 /* interface Props {
     diceResult: number | null,
