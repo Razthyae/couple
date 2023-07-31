@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styles from './Points.module.css'
+import AppContext from '../../../components/AppContext'
 
-function Points(props: any) {
-    const {points} = props
+function Points() {
+    const {points, playerNames} = useContext(AppContext)
 
     return (
         <div className={styles.points}>
-            <p>Male: {points[0]} Female: {points[1]}</p>
+            <p>{playerNames[0]}: {points[0]} {playerNames[1]}: {points[1]}</p>
         </div>
     )
 }

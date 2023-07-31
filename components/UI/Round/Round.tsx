@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styles from './Round.module.css'
+import AppContext from '../../AppContext'
 
 
-
-function Round(props) {
-   const {round} = props
+function Round() {
+   const {round} = useContext(AppContext)
 
     return (
         <div className={styles.roundCounter}>

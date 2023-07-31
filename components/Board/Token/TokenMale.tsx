@@ -1,12 +1,12 @@
 import styles from "./TokenMale.module.css";
 import { useRef, useEffect, useContext } from "react";
-import {GameContext} from '../../../pages/game'
+import AppContext from '../../../components/AppContext'
 
 export default function TokenMale() {
   const tokenRef: any = useRef(null);
 
  
-  const {tracker, setTracker, currTile} = useContext(GameContext)
+  const {tracker, setTracker, currTile} = useContext(AppContext)
 
 
   useEffect(() => {
