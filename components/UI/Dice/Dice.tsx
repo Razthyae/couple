@@ -26,10 +26,13 @@ function Dice() {
     updateRound,
     devMode,
     setDevMode,
+    playerNames
   } = useContext(AppContext);
 
   const rollRef = useRef<HTMLButtonElement>(null);
   const router = useRouter();
+
+  ///////////// CHECK IF CROSSED THE STARTING TILE / UPDATES ROUND /////////
 
   const calculateNewTile = (roll: number, currentTile: number) => {
     let result: number = currentTile + roll;
@@ -38,7 +41,20 @@ function Dice() {
       if (round[active] === 3) {
         setTimeout(() => {
           console.log("Koniec gry!");
-          router.push('/')
+          Swal.fire({
+            title: `${playerNames[0]} has won!`,
+            text: `Congratulations! For the next 5 minutes ${playerNames[1]} will do anything you want :)`,
+            icon: 'warning',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Back to main menu',
+            allowEscapeKey: false,
+            allowOutsideClick: false
+          }).then((result) => {
+            if (result.isConfirmed) {
+              router.push('/')
+            }
+          })
+         /*  router.push('/') */
         }, 1001);
       }
       updateRound(active, round[active] + 1);
