@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import React, { useContext } from "react";
+import React, { useContext, useEffect} from "react";
 import AppContext from "../components/AppContext";
 import Link from "next/link";
 import Logo from "../public/logo.png";
@@ -15,18 +15,34 @@ export default function Home() {
 
   const startGame = (event) => {
     if (playerNames[0] === "" || playerNames[1] === "") {
-      event.preventDefault();
+      if(event !== undefined) {event.preventDefault()}
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Enter your names please :)',
-        
+        allowEnterKey: false
       })
     } else {
       router.push('/game')
     }
 
   };
+
+/*   useEffect(() => {
+    window.addEventListener('keypress', (event) => {
+      if(event.key === "Enter") {
+        console.log("Enter")
+        document.getElementById("startButton").click();
+        
+      }
+    })
+  }, []) */
+  function handleKeyPress(e){
+     if (e.key==="Enter"){
+        startGame()
+     }
+   }
+
 
   return (
     <div className={styles.container}>
@@ -52,18 +68,20 @@ export default function Home() {
             value={playerNames[0]}
             placeholder="Male"
             onChange={(event) => updatePlayerNames(0, event.target.value)}
+            onKeyDown={handleKeyPress}
           ></input>
           <input
             type="text"
             value={playerNames[1]}
             placeholder="Female"
             onChange={(event) => updatePlayerNames(1, event.target.value)}
+            onKeyDown={handleKeyPress}
           ></input>
        
         </div>
         
         <div className={styles.startButton}>
-  <Link className={styles.cta} href="/game" onClick={startGame}>
+  <Link className={styles.cta} href="/game" onClick={startGame} id="startButton">
     <span>START</span>
     <span>
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
