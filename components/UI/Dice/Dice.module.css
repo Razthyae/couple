@@ -3,3 +3,7 @@
     top: 200px;
 }
 
+.active {
+    transition-property: opacity;
+    opacity: 0
+}

@@ -1,16 +1,10 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import styles from "./Dice.module.css";
-import { Tiles, Actions, aActions1, aActions3 } from "../../Board/Tiles/const";
-import { act } from "react-dom/test-utils";
+import { Tiles, Actions1, Actions3, ActionsGain } from "../../Board/Tiles/const";
 import Swal from "sweetalert2";
 import AppContext from "../../../components/AppContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
-/* interface Props {
-    diceResult: number | null,
-    setDiceResult: 
-} */
 
 function Dice() {
   const {
@@ -26,11 +20,24 @@ function Dice() {
     updateRound,
     devMode,
     setDevMode,
-    playerNames
+    playerNames,
   } = useContext(AppContext);
 
   const rollRef = useRef<HTMLButtonElement>(null);
+  const activeRef = useRef<HTMLParagraphElement>(null);
   const router = useRouter();
+
+  ///////////////// ACTIVE PLAYER FADE EFFECT ///////////////////////////////
+
+  useEffect(() => {
+    activeRef.current.style.transitionDuration = "0s";
+    activeRef.current.style.opacity = "0";
+
+    setTimeout(() => {
+      activeRef.current.style.transitionDuration = "0.5s";
+      activeRef.current.style.opacity = "1";
+    }, 1000);
+  }, [active]);
 
   ///////////// CHECK IF CROSSED THE STARTING TILE / UPDATES ROUND /////////
 
@@ -44,17 +51,16 @@ function Dice() {
           Swal.fire({
             title: `${playerNames[0]} has won!`,
             text: `Congratulations! For the next 5 minutes ${playerNames[1]} will do anything you want :)`,
-            icon: 'warning',
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Back to main menu',
+            icon: "warning",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "Back to main menu",
             allowEscapeKey: false,
-            allowOutsideClick: false
+            allowOutsideClick: false,
           }).then((result) => {
             if (result.isConfirmed) {
-              router.push('/')
+              router.push("/");
             }
-          })
-         /*  router.push('/') */
+          });
         }, 1001);
       }
       updateRound(active, round[active] + 1);
@@ -94,16 +100,17 @@ function Dice() {
       updatePoints(active, points[active] + tilePoints);
     }
     if (Tiles[tileNumber].action && !devMode) {
-      let basicAction: object = { "3": "Add 3 victory points" };
-      console.log(basicAction);
+      let randomGain: object = 
+      ActionsGain[Math.floor(Math.random() * ActionsGain.length)];
+      console.log(randomGain);
       let randomAction1: object =
-        aActions1[Math.floor(Math.random() * aActions1.length)];
+        Actions1[Math.floor(Math.random() * Actions1.length)];
       console.log(randomAction1);
       let randomAction2: object =
-        aActions3[Math.floor(Math.random() * aActions3.length)];
+        Actions3[Math.floor(Math.random() * Actions3.length)];
       console.log(randomAction2);
       let availableActions = {
-        ...basicAction,
+        ...randomGain,
         ...randomAction1,
         ...randomAction2,
       };
@@ -111,7 +118,7 @@ function Dice() {
 
       setTimeout(async () => {
         const { value: userChoice } = await Swal.fire({
-          title: "Choose action",
+          title: `${playerNames[active]}, choose action`,
 
           input: "radio",
           inputOptions: availableActions,
@@ -129,6 +136,7 @@ function Dice() {
           confirmButtonText: "Cool",
           allowOutsideClick: false,
           allowEscapeKey: false,
+          footer: `Available points: ${points[active]}`
         });
 
         updatePoints(active, points[active] + parseInt(userChoice));
@@ -145,7 +153,9 @@ function Dice() {
   return (
     <div className={styles.dice}>
       <p id="dice-result">{diceResult}</p>
-      <p id="active-player">{active === 0 ? "Male" : "Female"}</p>
+      <p id="active-player" ref={activeRef} className={styles.active}>
+        {active === 0 ? playerNames[0] : playerNames[1]}'s turn
+      </p>
       <button onClick={handleRoll} id="dice-btn" ref={rollRef}>
         Roll the dice
       </button>

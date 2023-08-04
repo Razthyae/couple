@@ -1,0 +1,31 @@
+.swal2-label{
+    background-color: #FE7472 !important;
+    height: 250px;
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.swal2-radio input[type="radio"] {
+    display: none;
+}
+
+.swal2-radio input:checked+.swal2-label{
+  
+    background-color: #ea4e4c !important;
+}
+
+.swal2-modal {
+    width: 700px;
+}
+
+.swal2-radio label {
+    background-color: #FE7472;
+    border-radius: 10px;
+    padding: 7px;
+}
