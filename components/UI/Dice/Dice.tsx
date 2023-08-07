@@ -30,6 +30,8 @@ function Dice() {
   const diceRef = useRef(null);
 
   const onRoll = () => {
+    console.log("costam")
+    rollRef.current!.disabled = true;
     diceRef.current.rollDice();
   };
 
@@ -77,11 +79,11 @@ function Dice() {
     return result;
   };
 
-  const handleRoll = () => {
-    rollRef.current!.disabled = true;
+  const handleRoll = (rollResult: number) => {
+    
 
     ////////////////////// ROLL THE DICE //////////////////////
-    let roll: number = Math.ceil(Math.random() * 6);
+    let roll: number = rollResult
     setDiceResult(roll);
 
     /////////////////////// MOVE THE ACTIVE PLAYER ///////////////////////
@@ -163,12 +165,14 @@ function Dice() {
       <p id="active-player" ref={activeRef} className={styles.active}>
         {active === 0 ? playerNames[0] : playerNames[1]}'s turn
       </p>
-      <p id="dice-result">{diceResult}</p>
-      <DiceComponent size={50} triggers={["Enter"]} onRoll={(TValue) => console.log(TValue)} rollingTime={2000} ref={diceRef}/>
-      <button onClick={handleRoll} id="dice-btn" ref={rollRef}>
-        Roll the dice
-      </button>
-      <button onClick={onRoll}>
+      
+      <DiceComponent size={50} triggers={["Enter"]} onRoll={(TValue) => 
+        {
+         
+          handleRoll(TValue)
+        }
+        } rollingTime={2000} ref={diceRef}/>
+      <button onClick={onRoll} ref={rollRef}>
         Roll
       </button>
       <button onClick={() => setDevMode(!devMode)}>
