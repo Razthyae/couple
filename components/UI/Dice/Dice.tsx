@@ -152,17 +152,18 @@ function Dice() {
 
   return (
     <div className={styles.dice}>
-      <p id="dice-result">{diceResult}</p>
       <p id="active-player" ref={activeRef} className={styles.active}>
         {active === 0 ? playerNames[0] : playerNames[1]}'s turn
       </p>
+      <p id="dice-result">{diceResult}</p>
+      
       <button onClick={handleRoll} id="dice-btn" ref={rollRef}>
         Roll the dice
       </button>
       <button onClick={() => setDevMode(!devMode)}>
         Dev mode = {`${devMode}`}{" "}
       </button>
-      <Link href="/">Main menu</Link>
+      
     </div>
   );
 }

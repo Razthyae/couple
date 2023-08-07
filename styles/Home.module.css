@@ -9,6 +9,12 @@
 
 }
 
+.pointsRoundContainer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 20px;
+}
 
 
 .main {
@@ -168,4 +174,9 @@ path.two {
   100% {
       fill: white;
   }
+}
+
+.App a {
+  position: absolute;
+  top: 620px;
 }

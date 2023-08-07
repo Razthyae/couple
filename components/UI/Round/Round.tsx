@@ -8,8 +8,7 @@ function Round() {
 
     return (
         <div className={styles.roundCounter}>
-            Current round: 
-            {round[1] > round[0] ? round[1] : round[0]}
+            Round {round[1] > round[0] ? round[1] : round[0]}
         </div>
     )
 }
