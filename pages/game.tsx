@@ -8,11 +8,14 @@ import Dice from "../components/UI/Dice/Dice";
 import Points from "../components/UI/Points/Points";
 import Round from "../components/UI/Round/Round";
 import Link from "next/link";
-
+import { useContext } from "react";
+import AppContext from "../components/AppContext";
 
 export const GameContext = createContext(null);
 
 export default function Game() {
+  const {devMode, setDevMode} = useContext(AppContext)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -35,6 +38,9 @@ export default function Game() {
           <Link href="/" id="backToMenu">
             Main menu
           </Link>
+          <button onClick={() => setDevMode(!devMode)} className={styles.devButton}>
+        Dev mode = {`${devMode}`}{" "}
+      </button>
         </div>
       </main>
     </div>

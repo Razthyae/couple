@@ -5,9 +5,21 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .active {
     transition-property: opacity;
     opacity: 0
 }
+
+.diceContainer {
+   
+    height: 50px;
+    width: 50px;
+    border-radius: 12px;
+    background-color: #fff;
+    overflow: hidden; /* This ensures the pseudo-element doesn't overflow */
+    z-index: 1; /* Make sure the content is above the pseudo-element */
+}
+

@@ -1,12 +1,16 @@
 import React, { useRef, useContext, useEffect } from "react";
 import styles from "./Dice.module.css";
-import { Tiles, Actions1, Actions3, ActionsGain } from "../../Board/Tiles/const";
+import {
+  Tiles,
+  Actions1,
+  Actions3,
+  ActionsGain,
+} from "../../Board/Tiles/const";
 import Swal from "sweetalert2";
 import AppContext from "../../../components/AppContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import DiceComponent from "react-dice-roll";
-
 
 function Dice() {
   const {
@@ -28,11 +32,13 @@ function Dice() {
   const rollRef = useRef<HTMLButtonElement>(null);
   const activeRef = useRef<HTMLParagraphElement>(null);
   const diceRef = useRef(null);
+  const diceContainerRef = useRef<HTMLDivElement>(null)
 
   const onRoll = () => {
-    console.log("costam")
+    diceContainerRef.current.style.overflow = "visible"
     rollRef.current!.disabled = true;
     diceRef.current.rollDice();
+    
   };
 
   const router = useRouter();
@@ -80,10 +86,8 @@ function Dice() {
   };
 
   const handleRoll = (rollResult: number) => {
-    
-
     ////////////////////// ROLL THE DICE //////////////////////
-    let roll: number = rollResult
+    let roll: number = rollResult;
     setDiceResult(roll);
 
     /////////////////////// MOVE THE ACTIVE PLAYER ///////////////////////
@@ -110,8 +114,8 @@ function Dice() {
       updatePoints(active, points[active] + tilePoints);
     }
     if (Tiles[tileNumber].action && !devMode) {
-      let randomGain: object = 
-      ActionsGain[Math.floor(Math.random() * ActionsGain.length)];
+      let randomGain: object =
+        ActionsGain[Math.floor(Math.random() * ActionsGain.length)];
       console.log(randomGain);
       let randomAction1: object =
         Actions1[Math.floor(Math.random() * Actions1.length)];
@@ -146,7 +150,7 @@ function Dice() {
           confirmButtonText: "Cool",
           allowOutsideClick: false,
           allowEscapeKey: false,
-          footer: `Available points: ${points[active]}`
+          footer: `Available points: ${points[active]}`,
         });
 
         updatePoints(active, points[active] + parseInt(userChoice));
@@ -165,20 +169,21 @@ function Dice() {
       <p id="active-player" ref={activeRef} className={styles.active}>
         {active === 0 ? playerNames[0] : playerNames[1]}'s turn
       </p>
-      
-      <DiceComponent size={50} triggers={["Enter"]} onRoll={(TValue) => 
-        {
-         
-          handleRoll(TValue)
-        }
-        } rollingTime={2000} ref={diceRef}/>
+      <div className={styles.diceContainer} ref={diceContainerRef}>
+      <DiceComponent
+        size={50}
+        triggers={["Enter"]}
+        onRoll={(TValue) => {
+          handleRoll(TValue);
+          diceContainerRef.current.style.overflow = "hidden"
+        }}
+        rollingTime={2000}
+        ref={diceRef}
+      />
+      </div>
       <button onClick={onRoll} ref={rollRef}>
         Roll
       </button>
-      <button onClick={() => setDevMode(!devMode)}>
-        Dev mode = {`${devMode}`}{" "}
-      </button>
-      
     </div>
   );
 }
