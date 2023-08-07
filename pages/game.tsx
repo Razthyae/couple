@@ -9,6 +9,7 @@ import Points from "../components/UI/Points/Points";
 import Round from "../components/UI/Round/Round";
 import Link from "next/link";
 
+
 export const GameContext = createContext(null);
 
 export default function Game() {
@@ -29,6 +30,7 @@ export default function Game() {
           <Board />
           <TokenMale />
           <TokenFemale />
+          
           <Dice />
           <Link href="/" id="backToMenu">
             Main menu

@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 import AppContext from "../../../components/AppContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import DiceComponent from "react-dice-roll";
+
 
 function Dice() {
   const {
@@ -25,6 +27,12 @@ function Dice() {
 
   const rollRef = useRef<HTMLButtonElement>(null);
   const activeRef = useRef<HTMLParagraphElement>(null);
+  const diceRef = useRef(null);
+
+  const onRoll = () => {
+    diceRef.current.rollDice();
+  };
+
   const router = useRouter();
 
   ///////////////// ACTIVE PLAYER FADE EFFECT ///////////////////////////////
@@ -156,9 +164,12 @@ function Dice() {
         {active === 0 ? playerNames[0] : playerNames[1]}'s turn
       </p>
       <p id="dice-result">{diceResult}</p>
-      
+      <DiceComponent size={50} triggers={["Enter"]} onRoll={(TValue) => console.log(TValue)} rollingTime={2000} ref={diceRef}/>
       <button onClick={handleRoll} id="dice-btn" ref={rollRef}>
         Roll the dice
+      </button>
+      <button onClick={onRoll}>
+        Roll
       </button>
       <button onClick={() => setDevMode(!devMode)}>
         Dev mode = {`${devMode}`}{" "}
