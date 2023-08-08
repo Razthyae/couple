@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
+.container main {
+  background-color: red;
+}
+
+.App * {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 .App {
-  height: 100vh;
+  height: 650px;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  
+  flex-direction: column;
   align-items: center;
-
+  color: white;
+  background-color: black;
 }
 
 .pointsRoundContainer {
@@ -14,6 +26,29 @@
   flex-direction: row;
   position: absolute;
   top: 20px;
+}
+
+.boardPointsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pointsMale {
+  transform: rotate(90deg);
+ 
+}
+
+.pointsFemale {
+  transform: rotate(-90deg)
+}
+
+.pointsMale, .pointsFemale {
+  font-size: 50px;
+  width: 400px;
+  text-align: center;
 }
 
 

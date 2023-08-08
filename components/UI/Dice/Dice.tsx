@@ -36,7 +36,7 @@ function Dice() {
 
   const onRoll = () => {
     diceContainerRef.current.style.overflow = "visible"
-    rollRef.current!.disabled = true;
+    rollRef.current.style.pointerEvents = "none"
     diceRef.current.rollDice();
     
   };
@@ -48,10 +48,12 @@ function Dice() {
   useEffect(() => {
     activeRef.current.style.transitionDuration = "0s";
     activeRef.current.style.opacity = "0";
+    activeRef.current.style.transform = "translateY(10px)"
 
     setTimeout(() => {
       activeRef.current.style.transitionDuration = "0.5s";
       activeRef.current.style.opacity = "1";
+      activeRef.current.style.transform = "translateY(0px)"
     }, 1000);
   }, [active]);
 
@@ -74,7 +76,8 @@ function Dice() {
             allowOutsideClick: false,
           }).then((result) => {
             if (result.isConfirmed) {
-              router.push("/");
+             window.location.href = "/"
+              
             }
           });
         }, 1001);
@@ -161,7 +164,7 @@ function Dice() {
 
     active === 0 ? setActive(1) : setActive(0);
 
-    setTimeout(() => (rollRef.current!.disabled = false), 1000);
+    setTimeout(() => (rollRef.current.style.pointerEvents = "auto"), 1000);
   };
 
   return (
@@ -181,9 +184,14 @@ function Dice() {
         ref={diceRef}
       />
       </div>
-      <button onClick={onRoll} ref={rollRef}>
-        Roll
+      <button onClick={onRoll} ref={rollRef} className={styles.rollButton}>
+      <span>Roll the dice!</span>
+  <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+  </svg>
+  
       </button>
+      
     </div>
   );
 }

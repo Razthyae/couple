@@ -29,3 +29,7 @@
     border-radius: 10px;
     padding: 7px;
 }
+
+html {
+    background-color: black;
+}

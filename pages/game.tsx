@@ -25,12 +25,16 @@ export default function Game() {
 
       <main>
         <div className={styles.App}>
-          <div className={styles.pointsRoundContainer}>
-            <Points player="male" />
-            <Round />
-            <Points player="female" />
-          </div>
+          
+            
+          <Round />
+            
+        
+          <div className={styles.boardPointsContainer}>
+            <div className={styles.pointsMale}><Points player="male" /></div>
           <Board />
+          <div className={styles.pointsFemale}><Points player="female" /></div>
+          </div>
           <TokenMale />
           <TokenFemale />
           

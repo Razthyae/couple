@@ -10,52 +10,52 @@ export const Tiles: {
   },
   {
     id: "tile-2",
-    name: " ",
+    name: "Points: +1",
     points: 1,
   },
   {
     id: "tile-3",
-    name: " ",
+    name: "Points: +1",
     points: 1,
   },
   {
     id: "tile-4",
-    name: " ",
+    name: "Action",
     action: true,
   },
   {
     id: "tile-5",
-    name: " ",
+    name: "Points: +1",
     points: 1,
   },
   {
     id: "tile-6",
-    name: " ",
+    name: "Points: -1",
     points: -1,
   },
   {
     id: "tile-7",
-    name: " ",
+    name: "Action",
     action: true,
   },
   {
     id: "tile-8",
-    name: " ",
+    name: "Points: +1",
     points: 1,
   },
   {
     id: "tile-9",
-    name: " ",
+    name: "Action",
     action: true,
   },
   {
     id: "tile-10",
-    name: " ",
+    name: "Action",
     action: true,
   },
   {
     id: "tile-11",
-    name: " ",
+    name: "Points: -1",
     points: -1,
   },
   {
@@ -64,7 +64,7 @@ export const Tiles: {
   },
   {
     id: "tile-13",
-    name: " ",
+    name: "Action",
     action: true,
   },
   {
@@ -73,12 +73,12 @@ export const Tiles: {
   },
   {
     id: "tile-15",
-    name: " ",
+    name: "Action",
     action: true,
   },
   {
     id: "tile-16",
-    name: " ",
+    name: "Points: +1",
     points: 1,
   },
   {
@@ -87,7 +87,7 @@ export const Tiles: {
   },
   {
     id: "tile-18",
-    name: " ",
+    name: "Points: +1",
     points: 1,
   },
   {

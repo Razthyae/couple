@@ -2,11 +2,13 @@
     width:30px;
     height: 30px;
     border-radius: 100px;
-    background-color: red;
+    border: 1px solid black;
+    background-color: #40bf77 ;
     position: absolute;
-    top: 0;
+    top: 7px;
     left: -5px;
     transition-property: transform;
     transition-duration: 0.5s;
+    z-index: 1;
 
 }

@@ -2,4 +2,15 @@
     width: 100px;
     height: 100px;
     border: 1px solid black;
+    background: radial-gradient(#fea5a3, #FE7472 70%);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.tile p {
+    
+    margin: 0px;
+    padding: 10px;
+    
+    
 }
