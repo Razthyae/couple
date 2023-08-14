@@ -14,6 +14,7 @@ export default function MyApp({Component, pageProps}: AppProps) {
     const [round, setRound] = useState([0, 0])
     const [devMode, setDevMode] = useState(false)
     const [playerNames, setPlayerNames] = useState(['', ''])
+   
   
     const updateCurrTile = (index, newValue) => {
       const updatedValues = [...currTile];
@@ -59,7 +60,8 @@ export default function MyApp({Component, pageProps}: AppProps) {
       setDevMode: setDevMode,
       playerNames: playerNames,
       setPlayerNames: setPlayerNames,
-      updatePlayerNames: updatePlayerNames
+      updatePlayerNames: updatePlayerNames,
+   
     };
 
     return (
