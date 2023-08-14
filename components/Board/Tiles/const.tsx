@@ -3,7 +3,7 @@ export const Tiles: {
   name: string;
   points?: number;
   action?: boolean;
-  move?: boolean
+  bonus?: boolean
 }[] = [
   {
     id: "tile-1",
@@ -71,8 +71,8 @@ export const Tiles: {
   },
   {
     id: "tile-14",
-    name: "Points: -1",
-    points: -1
+    name: "Bonus turn",
+    bonus: true
   },
   {
     id: "tile-15",

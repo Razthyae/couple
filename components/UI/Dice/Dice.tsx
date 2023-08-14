@@ -162,7 +162,7 @@ function Dice() {
    
 
     ////////////////////// SET THE ACTIVE PLAYER //////////////////////
-    if (!Tiles[tileNumber].move) {
+    if (!Tiles[tileNumber].bonus) {
     active === 0 ? setActive(1) : setActive(0);
     }
 
