@@ -219,5 +219,84 @@ path.two {
 .devButton {
   position: fixed;
   left: 20px;
-  top: 20px;
+  bottom: 20px;
 }
+
+.backButton {
+  z-index: 5;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+	width: 45px;
+	height: 45px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+	cursor: pointer;
+	background-color: cadetblue;
+/* 	background-image: linear-gradient(315deg, #FE7472 0%, #fea5a3 74%);
+ */	border: none;
+	border-radius: 50%;
+	transition: 200ms;
+}
+
+  .backButton svg {
+    fill: white;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg)
+  }
+  
+  .backButton:before {
+    content: 'Main Menu';
+    position: absolute;
+    transform: translateX(-50%) translateY(45px) ;
+    font-size: 15px;
+    transition: 200ms;
+    color: transparent;
+    font-weight: bold;
+  }
+  
+  .backButton:hover {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    width: 50px;
+    height: 50px;
+  }
+
+ 
+  
+  .backButton:hover::before {
+    color: #fff;
+  }
+  
+  .backButton:hover svg {
+      animation: bounce 2s infinite linear;
+  }
+  
+  @keyframes bounce {
+    0% {transform: translateX(-50%) translateY(-50%) rotate(-90deg);}
+    25% {transform: translateX(-65%) translateY(-50%) rotate(-90deg)}
+    50% {transform: translateX(-50%) translateY(-50%) rotate(-90deg)}
+    75% {transform: translateX(-35%) translateY(-50%) rotate(-90deg)}
+    100% {transform: translateX(-50%) translateY(-50%) rotate(-90deg)}
+  }
+  
+  .backButton:focus {
+    outline: none;
+  }
+
+  .restartButton {
+    color: white;
+    width: 120px !important;
+    font-size: 17px !important;
+    position: absolute;
+    bottom: 0px;
+    padding-bottom: 0px;
+    background: none;
+    border: none;
+  }

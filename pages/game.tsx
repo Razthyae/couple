@@ -10,11 +10,13 @@ import Round from "../components/UI/Round/Round";
 import Link from "next/link";
 import { useContext } from "react";
 import AppContext from "../components/AppContext";
+import { useRouter } from "next/router";
 
 export const GameContext = createContext(null);
 
 export default function Game() {
   const {devMode, setDevMode} = useContext(AppContext)
+  const router = useRouter()
 
   return (
     <div className={styles.container}>
@@ -39,12 +41,14 @@ export default function Game() {
           <TokenFemale />
           
           <Dice />
+          {/* <button className={styles.backToMenuBtn}>BoxShadow</button> */}
           <Link href="/" id="backToMenu">
             Main menu
           </Link>
           <button onClick={() => setDevMode(!devMode)} className={styles.devButton}>
         Dev mode = {`${devMode}`}{" "}
       </button>
+      <button className={styles.backButton} onClick={() => router.push('/')}><svg id="backButtonArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg></button>
         </div>
       </main>
     </div>
