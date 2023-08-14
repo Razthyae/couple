@@ -60,7 +60,8 @@ export const Tiles: {
   },
   {
     id: "tile-12",
-    name: " ",
+    name: "Points: -3",
+    points: -3
   },
   {
     id: "tile-13",
@@ -69,7 +70,8 @@ export const Tiles: {
   },
   {
     id: "tile-14",
-    name: " ",
+    name: "Points: -1",
+    points: -1
   },
   {
     id: "tile-15",
@@ -83,7 +85,8 @@ export const Tiles: {
   },
   {
     id: "tile-17",
-    name: " ",
+    name: "Points: -1",
+    points: -1
   },
   {
     id: "tile-18",
@@ -92,19 +95,23 @@ export const Tiles: {
   },
   {
     id: "tile-19",
-    name: " ",
+    name: "Action",
+    action: true
   },
   {
     id: "tile-20",
-    name: " ",
+    name: "Points: +3",
+    points: 3
   },
   {
     id: "tile-21",
-    name: " ",
+    name: "Points: -1",
+    points: -1
   },
   {
     id: "tile-22",
-    name: " ",
+    name: "Action",
+    action: true
   },
 ];
 
@@ -162,6 +169,7 @@ export const ActionsGain = [
   { "2": `${earn2} You have to suck your partner's nipples for the next 1 minute.` },
   { "2": `${earn2} You have to use your teeth to take off your partner's underwear.` },
   { "2": `${earn2} You have to kiss or bite your partner's booty.` },
+  { "2": `${earn2} You have to lick and bite your partner's ear for 1 minute.` },
   { "2": `${earn2} You have to give your partner a lap dance.` },
   {
     "2": `${earn2} You have to do a pole dance, with your partner being the pole, in the whole act.`,
@@ -189,17 +197,18 @@ export const ActionsGain2: object[] = [
 { "2": `${earn2} You have to use your fingers/hand to stimulate your partner's genitals.` },
 { "2": `${earn2} You have to stimulate your partner's anus using your fingers or tongue.` },
 { "2": `${earn2} You have to simultaneously stimulate your partner's anus and genitals using tongue and hand.` },
-{ "2": `${earn2} You have to .` },
-{ "2": `${earn2} You have to .` },
-{ "2": `${earn2} You have to .` },
+{ "2": `${earn2} You have to watch a porn together while playing with yourselves for 2 minutes.` },
+{ "2": `${earn2} You have to lick your partner's nipples while doing a handjob/fingering for 2 minutes.` },
+{ "2": `${earn2} You have to arouse your partner by rubbing your genitals against their for 2 minutes - penetration not allowed!.` },
 ]
 
 export const ActionsGain3: object[] = [
   { "2": `${earn2} You have to ask your partner for favourite position and give it a go for two minutes!` },
-  { "2": `${earn2} You have to .` },
-  { "2": `${earn2} You have to .` },
-  { "2": `${earn2} You have to .` },
-  { "2": `${earn2} You have to .` },
-  { "2": `${earn2} You have to .` },
-  { "2": `${earn2} You have to .` },
+  { "2": `${earn2} You have to go on top of your partner and have sex while kissing the neck.` },
+  { "2": `${earn2} You have to choose sex position and give it a go for two minutes, changing tempo between very fast and very slow.` },
+  { "2": `${earn2} You have to watch a porn together and use the same sex positions as the actors.` },
+  { "2": `${earn2} You have to perform 69 position for two minutes.` },
+  { "2": `${earn2} You have to perform spooning position for two minutes.` },
+  { "2": `${earn2} You have to to grab your partner by the neck, put him/her against the wall and start having sex in standing position.` },
+  { "2": `${earn2} You have to slap your partner while having sex in the position of your choice for two minutes.` },
 ]
