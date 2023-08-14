@@ -3,6 +3,7 @@ export const Tiles: {
   name: string;
   points?: number;
   action?: boolean;
+  move?: boolean
 }[] = [
   {
     id: "tile-1",
