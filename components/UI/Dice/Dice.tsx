@@ -159,10 +159,12 @@ function Dice() {
         updatePoints(active, points[active] + parseInt(userChoice));
       }, 600);
     }
+   
 
     ////////////////////// SET THE ACTIVE PLAYER //////////////////////
-
+    if (!Tiles[tileNumber].move) {
     active === 0 ? setActive(1) : setActive(0);
+    }
 
     setTimeout(() => (rollRef.current.style.pointerEvents = "auto"), 1000);
   };
@@ -180,7 +182,7 @@ function Dice() {
           handleRoll(TValue);
           diceContainerRef.current.style.overflow = "hidden"
         }}
-        rollingTime={2000}
+        rollingTime={2}
         ref={diceRef}
       />
       </div>
