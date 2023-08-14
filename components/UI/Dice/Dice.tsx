@@ -160,6 +160,24 @@ function Dice() {
       }, 600);
     }
    
+    if(Tiles[tileNumber].move) {
+      console.log(Tiles[tileNumber].move)
+      setTimeout(() => {
+        let newTileValue = calculateNewTile((roll + Tiles[tileNumber].move), currTile[active]);
+        updateCurrTile(active, newTileValue);
+        let token =
+          active === 0
+            ? document.getElementById("tokenMale")
+            : document.getElementById("tokenFemale");
+    
+        const currentTile: any = document.getElementById(
+          `tile-${`${newTileValue}`}`
+        );
+        const tileLeft = currentTile.getBoundingClientRect().left;
+        const tileTop = currentTile.getBoundingClientRect().top;
+        token!.style.transform = `translate(${tileLeft + 35}px, ${tileTop + 35}px)`;
+      }, 500)
+    }
 
     ////////////////////// SET THE ACTIVE PLAYER //////////////////////
     if (!Tiles[tileNumber].bonus) {

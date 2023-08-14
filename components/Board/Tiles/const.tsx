@@ -3,7 +3,8 @@ export const Tiles: {
   name: string;
   points?: number;
   action?: boolean;
-  bonus?: boolean
+  bonus?: boolean;
+  move?: number
 }[] = [
   {
     id: "tile-1",
@@ -13,26 +14,31 @@ export const Tiles: {
     id: "tile-2",
     name: "Points: +1",
     points: 1,
+    
   },
   {
     id: "tile-3",
-    name: "Points: +1",
-    points: 1,
+    name: "Go forward 2 spaces",
+    move: 2
+    
   },
   {
     id: "tile-4",
     name: "Action",
     action: true,
+    
   },
   {
     id: "tile-5",
     name: "Points: +1",
     points: 1,
+    
   },
   {
     id: "tile-6",
     name: "Points: -1",
     points: -1,
+    
   },
   {
     id: "tile-7",
@@ -91,8 +97,8 @@ export const Tiles: {
   },
   {
     id: "tile-18",
-    name: "Points: +1",
-    points: 1,
+    name: "Go back 2 spaces",
+    move: -2
   },
   {
     id: "tile-19",
