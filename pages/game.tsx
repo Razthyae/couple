@@ -42,9 +42,7 @@ export default function Game() {
           
           <Dice />
           {/* <button className={styles.backToMenuBtn}>BoxShadow</button> */}
-          <Link href="/" id="backToMenu">
-            Main menu
-          </Link>
+          
           <button onClick={() => setDevMode(!devMode)} className={styles.devButton}>
         Dev mode = {`${devMode}`}{" "}
       </button>
