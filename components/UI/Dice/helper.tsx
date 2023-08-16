@@ -1,5 +1,5 @@
 
-
+/* 
 export const calculateNewTile = (roll: number, currentTile: number, stateForHelper: object) => {
 
 
@@ -14,3 +14,4 @@ if(result > 22) {
 return result
 }
 
+ */
