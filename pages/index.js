@@ -135,12 +135,15 @@ export default function Home() {
               </svg>
             </span>
           </Link>
+         
+        </div>
+        <div className={styles.restartContainer}>
           {diceResult !== "Roll the dice!" && (
             <button className={styles.restartButton} onClick={() => (window.location.href = "/")}>
               Restart
             </button>
           )}
-        </div>
+          </div>
       </main>
     </div>
   );
