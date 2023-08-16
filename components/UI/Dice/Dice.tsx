@@ -2,9 +2,7 @@ import React, { useRef, useContext, useEffect } from "react";
 import styles from "./Dice.module.css";
 import {
   Tiles,
-  Actions1,
-  Actions3,
-  ActionsGain,
+  Actions
 } from "../../Board/Tiles/const";
 import Swal from "sweetalert2";
 import AppContext from "../../../components/AppContext";
@@ -117,14 +115,15 @@ function Dice() {
       updatePoints(active, points[active] + tilePoints);
     }
     if (Tiles[tileNumber].action && !devMode) {
+      let playerRound = `round${round[active]}`
       let randomGain: object =
-        ActionsGain[Math.floor(Math.random() * ActionsGain.length)];
+        Actions[playerRound].gain[Math.floor(Math.random() * Actions[playerRound].gain.length)]
       console.log(randomGain);
       let randomAction1: object =
-        Actions1[Math.floor(Math.random() * Actions1.length)];
+      Actions[playerRound].spend1[Math.floor(Math.random() * Actions[playerRound].spend1.length)]
       console.log(randomAction1);
       let randomAction2: object =
-        Actions3[Math.floor(Math.random() * Actions3.length)];
+      Actions[playerRound].spend3[Math.floor(Math.random() * Actions[playerRound].spend3.length)]
       console.log(randomAction2);
       let availableActions = {
         ...randomGain,
@@ -143,7 +142,7 @@ function Dice() {
             if (!value) {
               return "You need to choose something!";
             } else {
-              if (points[active] < -parseInt(value)) {
+              if (parseInt(value) < 0 && points[active] < -parseInt(value)) {
                 return "Not enough points!";
               } else {
                 return null;

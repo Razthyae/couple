@@ -11,7 +11,7 @@ export default function MyApp({Component, pageProps}: AppProps) {
     const [currTile, setCurrTile] = useState([1, 1]);
     const [points, setPoints] = useState([0, 0]);
     const [active, setActive] = useState(0);
-    const [round, setRound] = useState([0, 0])
+    const [round, setRound] = useState([1, 1])
     const [devMode, setDevMode] = useState(false)
     const [playerNames, setPlayerNames] = useState(['', ''])
    
