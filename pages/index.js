@@ -53,25 +53,33 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.logo}>
-          <Image src={Logo} width={150} height={150} alt="Game logo" />
+          <Image src={Logo} width={100} height={100} alt="Game logo" />
           <h1>COUPLE'S GAME</h1>
         </div>
         <fieldset className={styles.about}>
           <legend>How to play</legend>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel
-            risus volutpat, luctus sapien nec, pharetra magna. Quisque bibendum
-            lacinia ligula eu maximus. Nullam commodo urna id odio consectetur
-            vulputate. Vestibulum congue lorem ante, vel mattis arcu malesuada
-            ut. Duis volutpat, ex eu gravida gravida, ante massa auctor dolor,
-            eget gravida enim erat eget augue. Sed quis tortor sit amet risus
-            pharetra consequat ut non tortor. Proin non ex mi. Etiam pharetra
-            venenatis purus sed placerat. Phasellus vel hendrerit ante. Aliquam
-            erat volutpat. Pellentesque lobortis lacus in hendrerit convallis.
-            Maecenas quis mauris odio. Integer ut aliquet risus, a blandit
-            lacus. Nunc justo lorem, pharetra eu odio eget, laoreet tincidunt
-            felis. Integer ex urna, mollis vitae vehicula ut, pretium at nisi.
-          </p>
+      <p className={styles.sectionParagraph}>
+        Throw the dice, earn <span className={styles.emphasis}>Lust Points (LP)</span>, and embark on a journey of pleasure together! In Couple's Game, each round intensifies, transitioning from lighthearted foreplay to... well, you know what ;)
+      </p>
+
+      <p className={styles.sectionParagraph}>
+        Navigate the game board featuring 3 types of tiles:
+      </p>
+      
+      <div className={styles.tileType}>
+        <span className={styles.emphasis}>Lust Point Tile:</span> <span className={styles.bold}>Collect LP for exciting experiences.</span>
+      </div>
+      <div className={styles.tileType}>
+        <span className={styles.emphasis}>Movement Tile:</span> <span className={styles.bold}>Progress your journey.</span>
+      </div>
+      <div className={styles.tileType}>
+        <span className={styles.emphasis}>Action Tile:</span> <span className={styles.bold}>Engage in romantic tasks for your partner or have something special yourself!</span>
+      </div>
+
+      
+      <p className={styles.sectionParagraph}>
+        Remember the <span className={styles.goldenEmphasis}>golden rule</span> of Couple's Game: Maximize pleasure for both players!
+      </p>
         </fieldset>
         <div className={styles.nameInput}>
           <input

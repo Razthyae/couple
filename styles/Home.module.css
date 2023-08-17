@@ -72,19 +72,28 @@
 }
 
 .main h1 {
-  font-size: 50px;
+  font-size: 42px;
   margin-top: 3px;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
 }
 
-.about {
-  height: 200px;
+.about {/* 
+  height: 200px; */
   width: 800px;
   border: 5px solid black;
+  
 }
 
 .about legend {
   font-size: 30px;
+  color: black;
+ 
+  padding: 4px;
+}
+
+.about p {
+  margin: 7px;
+  font-size: 20px;
 }
 
 
@@ -298,4 +307,32 @@ path.two {
     padding-bottom: 0px;
     background: none;
     border: none;
+  }
+
+
+   /* Styles for the paragraphs */
+   .sectionParagraph {
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .emphasis {
+    color: #f0f0f0;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+
+  /* Styles for tile types */
+  .tileType {
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+
+
+
+  .goldenEmphasis {
+    color: rgb(234, 180, 43); /* Golden color */
+    font-weight: bold;
   }
