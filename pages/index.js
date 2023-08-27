@@ -7,6 +7,7 @@ import Logo from "../public/logo.png";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
+import Script from "next/script";
 
 export default function Home() {
   const { playerNames, updatePlayerNames, diceResult } = useContext(AppContext);
@@ -49,14 +50,16 @@ export default function Home() {
       <Head>
         
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-356FBNMQMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+<Script src="https://www.googletagmanager.com/gtag/js?id=G-356FBNMQMS"></Script>
+<Script id="google-analytics">
+{`
+    window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-356FBNMQMS');
-</script>
+  `}
+</Script>
 
         <title>siema</title>
         <link rel="icon" href="/favicon.ico" />
