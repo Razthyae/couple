@@ -47,6 +47,17 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
+        
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-356FBNMQMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-356FBNMQMS');
+</script>
+
         <title>siema</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
