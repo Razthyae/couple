@@ -62,7 +62,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .logo {
@@ -74,35 +74,38 @@
 .main h1 {
   font-size: 42px;
   margin-top: 3px;
-  margin-bottom: 6px;
+  margin-bottom: 26px;
 }
 
 .about {/* 
   height: 200px; */
   width: 800px;
   border: 5px solid black;
-  
+  border-radius: 20px;
+  padding: 15px;
 }
 
 .about legend {
   font-size: 30px;
   color: black;
- 
+  margin-left: 2px;
   padding: 4px;
 }
 
 .about p {
   margin: 7px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 
 
 .nameInput input[type="text"] {
-  width: 400px;
-  height: 50px;
-  font-size: 32px;
-  
+  width: 390px;
+  height: 40px;
+  margin-top: -10px;
+  font-size: 25px;
+  border-radius: 20px;
+  padding-left: 10px;
   background-color: red;
   border: 3px solid black;
 }
@@ -113,9 +116,9 @@
 
 .nameInput {
   display: flex;
-  width: 834px;
+  width: 840px;
   justify-content: space-between;
-  margin: 20px;
+  margin: 20px 0px;
 }
 
 .nameInput input:focus {
@@ -139,10 +142,10 @@
 
 .cta {
   display: flex;
-  padding: 10px 65px;
+  padding: 6px 55px;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   color: white;
   background: #6225E6;
   transition: 1s;
@@ -333,6 +336,6 @@ path.two {
 
 
   .goldenEmphasis {
-    color: rgb(234, 180, 43); /* Golden color */
+    color: #FBC638; /* Golden color */
     font-weight: bold;
   }

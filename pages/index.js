@@ -53,7 +53,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.logo}>
-          <Image src={Logo} width={100} height={100} alt="Game logo" />
+          <Image src={Logo} width={130} height={130} alt="Game logo" />
           <h1>COUPLE'S GAME</h1>
         </div>
         <fieldset className={styles.about}>
@@ -110,8 +110,8 @@ export default function Home() {
             </span>
             <span>
               <svg
-                width="66px"
-                height="43px"
+                width="56px"
+                height="33px"
                 viewBox="0 0 66 43"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"

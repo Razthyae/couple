@@ -124,9 +124,9 @@ export const Tiles: {
 
 
 
-const earn2 = `Earn 2 points.`;
-const spend1 = `Spend 1 point.`
-const spend3 = `Spend 3 points.`
+const earn2 = `Earn 2 Lust Points.`;
+const spend1 = `Spend 1 Lust Point.`
+const spend3 = `Spend 3 Lust Points.`
 
 
 
