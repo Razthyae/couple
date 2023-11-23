@@ -1,5 +1,6 @@
 # About project
 Romantic boardgame for couples inspired by "Truth or Dare" and "Monopoly". 
+
 Created with React and NextJS, state management using React Context.
 
 ![Project overview](https://i.imgur.com/9VjHrAd.png)
@@ -14,7 +15,7 @@ Created with React and NextJS, state management using React Context.
 - react-dice-roll
 
 # Live version
-couplesgame.netlify.app/
+https://couplesgame.netlify.app/
 
 # How to play
 Throw the dice, earn Lust Points (LP), and embark on a journey of pleasure together! In Couple's Game, each round intensifies, transitioning from lighthearted foreplay to... well, you know what ;)
