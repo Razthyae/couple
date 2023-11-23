@@ -21,7 +21,7 @@ export default function Game() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>siema</title>
+        <title>Couple's Game</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
