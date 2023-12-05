@@ -8,6 +8,14 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import Script from "next/script";
+import { Metadata } from "next";
+
+export const metadata = {
+  viewport: "width=device-width, initial-scale=1.0"
+}
+
+
+
 
 export default function Home() {
   const { playerNames, updatePlayerNames, diceResult } = useContext(AppContext);
@@ -166,7 +174,12 @@ export default function Home() {
             </button>
           )}
           </div>
+          
       </main>
+      <div className={styles.overlay}>
+           <p>This game is available in landscape orientation only. </p>
+           <p>Rotate your device!</p>
+          </div>
     </div>
   );
 }

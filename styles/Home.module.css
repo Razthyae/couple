@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
+
+
 .container main {
   background-color: red;
 }
@@ -53,8 +55,9 @@
 
 
 .main {
-  width: 100vw;
-  height: calc(100vh - 30px);
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
   background-color: red;
   position: absolute;
   top: 0;
@@ -79,7 +82,7 @@
 
 .about {/* 
   height: 200px; */
-  width: 800px;
+  max-width: 800px;
   border: 5px solid black;
   border-radius: 20px;
   padding: 15px;
@@ -338,4 +341,58 @@ path.two {
   .goldenEmphasis {
     color: #FBC638; /* Golden color */
     font-weight: bold;
+  }
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    z-index: -99;
+    transition-property: opacity;
+    transition-duration: 1s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    
+  }
+
+  .overlay p {
+    margin: 100px;
+  }
+
+  @media (orientation: portrait) {
+    .overlay {
+      opacity: 1;
+      z-index: 99;
+    }
+
+    .main {
+      display: none;
+    }
+  }
+
+  @media (max-height: 700px) {
+ 
+    .main {
+      height: 700px;
+    }
+  }
+
+  @media (max-width: 864px) {
+    .nameInput {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nameInput input {
+      margin: 20px;
+    }
   }
