@@ -104,7 +104,11 @@ function Dice() {
     );
     const tileLeft = currentTile.getBoundingClientRect().left;
     const tileTop = currentTile.getBoundingClientRect().top;
-    token!.style.transform = `translate(${tileLeft + 35}px, ${tileTop + 35}px)`;
+
+    const scrollLeft = window.scrollY
+    const scrollTop = window.scrollX
+
+    token!.style.transform = `translate(${tileLeft + 35 + scrollTop}px, ${tileTop + 35 + scrollLeft}px)`;
 
     ////////////////// ADD / REMOVE POINTS / TILE ACTION ////////////////
     let tileNumber = calculateNewTile(roll, currTile[active]) - 1;
