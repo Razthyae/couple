@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import React, { useState, createContext } from 'react';
 import AppContext from '../components/AppContext';
 import type { AppProps } from 'next/app'
+import Script from 'next/script';
 
 export default function MyApp({Component, pageProps}: AppProps) {
 
@@ -65,9 +66,27 @@ export default function MyApp({Component, pageProps}: AppProps) {
     };
 
     return (
+      <>
+     <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-356FBNMQMS`}
+      />
+
+      <Script strategy="lazyOnload">
+        {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-356FBNMQMS', {
+                    page_path: window.location.pathname,
+                    });
+                `}
+      </Script>
+
       <AppContext.Provider value={state}>
         <Component {...pageProps} />
       </AppContext.Provider>
+      </>
         )
 }
 

@@ -58,16 +58,7 @@ export default function Home() {
       <Head>
         
 
-<Script src="https://www.googletagmanager.com/gtag/js?id=G-356FBNMQMS"></Script>
-<Script id="google-analytics">
-{`
-    window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-356FBNMQMS');
-  `}
-</Script>
 
         <title>Couple's Game</title>
         <link rel="icon" href="/favicon.ico" />
